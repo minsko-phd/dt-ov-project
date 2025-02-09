@@ -10,8 +10,6 @@ export default defineConfig({
             GFN: 'GFN'
         }),
     ],
-    // The optimizedDeps and build blocks are for development with the
-    // local streaming library build only.
     optimizeDeps: {
         include: ['@nvidia/omniverse-webrtc-streaming-library'],
     },
@@ -19,5 +17,11 @@ export default defineConfig({
         commonjsOptions: {
             include: [/web-streaming-library/],
         },
+    },
+    server: {
+        host: '0.0.0.0',
+        port: 5173,
+        allowedHosts: ['63fa-175-195-49-211.ngrok-free.app'] // ngrok URL 허용
+        // 
     },
 });
