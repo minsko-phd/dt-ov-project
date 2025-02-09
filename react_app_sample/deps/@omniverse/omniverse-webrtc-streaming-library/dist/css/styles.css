@@ -1,0 +1,35 @@
+body {
+    background-color: rgba(54, 54, 54, 0.93);
+}
+
+video {
+    margin-top: 2em;
+    margin: 0 auto;
+    width: 76%;
+    margin-left: 12%;
+    -webkit-touch-callout: none;
+    user-select: none;
+    touch-action: none;
+}
+
+video:focus {
+    outline: none;
+}
+
+video::-webkit-media-controls {
+    display: none !important;
+}
+
+#message-display {
+    /* margin-top: 2em; */
+    text-align: center;
+    margin: 0 auto;
+    width: 76%;
+    border: 3px solid green;
+    padding: 10px;
+    color: green;
+}
+
+#main-div {
+    margin-top: 2em;
+}

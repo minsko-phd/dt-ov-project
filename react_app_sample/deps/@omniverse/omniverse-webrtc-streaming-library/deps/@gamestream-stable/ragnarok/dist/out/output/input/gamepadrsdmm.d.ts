@@ -1,0 +1,38 @@
+import { GamepadDataHandler } from "../interfaces";
+import { PlatformDetails } from "../dependencies";
+export declare class GamepadRSDMM implements GamepadDataHandler {
+    private rsdmmTimer;
+    private rsdmmTickFunc;
+    private rsdmmPollInterval;
+    private prevH;
+    private prevV;
+    private accumulatedH;
+    private accumulatedV;
+    private button1;
+    private button2;
+    private scale;
+    private eventElement;
+    private moveName;
+    private downName;
+    private upName;
+    private rtThreshold;
+    private ltThreshold;
+    private stickIndexX;
+    private stickIndexY;
+    private platformDetails;
+    constructor(element: HTMLElement, platformDetails: PlatformDetails);
+    gamepadStateUpdateHandler(count: number, index: number, buttons: number, trigger: number, inputaxes: readonly number[], ts: number, gamepadBitmap: number, name: string): void;
+    private rsdmmTick;
+    private makeButtonMask;
+    private sendMouseButtonEvent;
+    start(): void;
+    stop(): void;
+    setMoveType(moveName: string): void;
+    setDownUpTypes(downName: string, upName: string): void;
+    reset(): void;
+    gamepadBitmapUpdateHandler(gamepadBitmap: number): void;
+    finalizeGamepadData(count: number): void;
+    virtualGamepadUpdateHandler(buttons: number, trigger: number, index: number, axes: readonly number[], gamepadBitmap: number): void;
+    connectUnsupportedGamepad(gamepad: Gamepad): void;
+    disconnectUnsupportedGamepad(index: number): void;
+}
